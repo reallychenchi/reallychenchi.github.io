@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My Jekyll Blog</title>
-    <description>My blog posts</description>
-    <link>https://reallychenchi.github.io/</link>
-    <atom:link href="https://reallychenchi.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 12 Jun 2018 10:11:59 +0800</pubDate>
-    <lastBuildDate>Tue, 12 Jun 2018 10:11:59 +0800</lastBuildDate>
+    <title>陈池的博客</title>
+    <description>陈池的博客</description>
+    <link>http://www.chenchi.cc//</link>
+    <atom:link href="http://www.chenchi.cc//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 12 Jun 2018 10:19:44 +0800</pubDate>
+    <lastBuildDate>Tue, 12 Jun 2018 10:19:44 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -27,8 +27,8 @@
 
 </description>
         <pubDate>Mon, 11 Jun 2018 20:07:14 +0800</pubDate>
-        <link>https://reallychenchi.github.io/jekyll/update/2018/06/11/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">https://reallychenchi.github.io/jekyll/update/2018/06/11/welcome-to-jekyll.html</guid>
+        <link>http://www.chenchi.cc//jekyll/update/2018/06/11/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://www.chenchi.cc//jekyll/update/2018/06/11/welcome-to-jekyll.html</guid>
         
         
         <category>jekyll</category>
@@ -51,8 +51,8 @@
 
 </description>
         <pubDate>Sun, 10 Jun 2018 20:07:14 +0800</pubDate>
-        <link>https://reallychenchi.github.io/jekyll/update/2018/06/10/about.html</link>
-        <guid isPermaLink="true">https://reallychenchi.github.io/jekyll/update/2018/06/10/about.html</guid>
+        <link>http://www.chenchi.cc//jekyll/update/2018/06/10/about.html</link>
+        <guid isPermaLink="true">http://www.chenchi.cc//jekyll/update/2018/06/10/about.html</guid>
         
         
         <category>jekyll</category>
