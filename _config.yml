@@ -1,1 +1,8 @@
 theme: jekyll-theme-architect
+baseurl: ""
+url: "http://www.chenchi.cc/"
+theme_settings:
+title: 陈池的博客
+avatar: assets/img/qht.jpg             
+#gravatar: f98....6bfc                 # MD5 hash of your email address
+description: 陈池的博客                # Short description, primarily used by search engines
