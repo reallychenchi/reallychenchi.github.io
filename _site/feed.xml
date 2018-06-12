@@ -5,8 +5,8 @@
     <description>陈池的博客</description>
     <link>http://www.chenchi.cc//</link>
     <atom:link href="http://www.chenchi.cc//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 12 Jun 2018 10:19:44 +0800</pubDate>
-    <lastBuildDate>Tue, 12 Jun 2018 10:19:44 +0800</lastBuildDate>
+    <pubDate>Tue, 12 Jun 2018 17:21:33 +0800</pubDate>
+    <lastBuildDate>Tue, 12 Jun 2018 17:21:33 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -38,21 +38,39 @@
       </item>
     
       <item>
-        <title>About</title>
-        <description>&lt;p&gt;陈池@鹤壁&lt;/p&gt;
+        <title>VIM正则表达式之零宽断言</title>
+        <description>&lt;p&gt;零宽断言就是zero-width，我觉得很难懂，但是搞清楚了其实很简单：&lt;/p&gt;
 
-&lt;p&gt;Contact with me by &lt;a href=&quot;me@chenchi.cc&quot;&gt;me@chenchi.cc&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;:echo matchstr(“abc1234def”, “\\v(abc)@&amp;lt;=(.{-})(def)@=”)&lt;/p&gt;
 
-&lt;p&gt;我在&lt;/p&gt;
+&lt;p&gt;　　比如上述例子是一个典型的零宽断言应用，要求是abc的后面，def的前面，需要结合两个零宽断言来写，正则表达式结构看起来复杂其实简单：&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://www.zhihu.com/people/chen-chi-97-14/&quot;&gt;知乎&lt;/a&gt;
-&lt;a href=&quot;https://weibo.com/206731119&quot;&gt;微博&lt;/a&gt;
-&lt;a href=&quot;http://www.huacaoyuan.net/&quot;&gt;花草园&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;“(abc)@&amp;lt;=(.{-})(def)@=”&lt;/p&gt;
+
+&lt;p&gt;　　可以分成三部分：&lt;/p&gt;
+
+&lt;p&gt;(abc)&lt;/p&gt;
+
+&lt;p&gt;　　这是匹配前面的正则表达式，放在@&amp;lt;=前面，表示所要取得的字符串，是在能匹配这个正则表达式的部分的后面&lt;/p&gt;
+
+&lt;p&gt;(def)&lt;/p&gt;
+
+&lt;p&gt;　　这是匹配后面的正则表达式，放在@=的前面，表示所要取得的字符串，是在能匹配这个正则表达式的部分的前面&lt;/p&gt;
+
+&lt;p&gt;(.{-})&lt;/p&gt;
+
+&lt;p&gt;　　这就是我们要取得的字符串的正则表达式了，这里{-}是表示尽可能短的一个字符串，不是蛤总的一个眼镜框。&lt;/p&gt;
+
+&lt;p&gt;　　额外说明一下，\\v是一个前缀，它表示这个字符串完全使用正则表达式，星号不是星号，是代表任意匹配，@&amp;lt;=也不是三个普通字符，而是代表前置零宽断言，因为在字符串里面，所以使用两个斜杠，如果在vim查找当中使用，只要一个就可以了 :/\v(abc)@&amp;lt;=(.{-})(def)@= ，会在1234那里匹配成功。&lt;/p&gt;
+
+&lt;p&gt;　　也就是说，要写一个零宽断言，获取两个正则表达式之间的部分，可以分成 (表达式前)@&amp;lt;=(表达式)(表达式后)@=，表示取得“表达式前”和“表达式后”之间，能够匹配”表达式“的字符串。按照这个路数往上套就可以了。零否断言也一样原理。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://teacher.edu.cn/pc/article/201303/578901.html&quot;&gt;教育网&lt;/a&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Sun, 10 Jun 2018 20:07:14 +0800</pubDate>
-        <link>http://www.chenchi.cc//jekyll/update/2018/06/10/about.html</link>
-        <guid isPermaLink="true">http://www.chenchi.cc//jekyll/update/2018/06/10/about.html</guid>
+        <pubDate>Tue, 19 Mar 2013 02:30:14 +0800</pubDate>
+        <link>http://www.chenchi.cc//jekyll/update/2013/03/19/vim-zerowidth.html</link>
+        <guid isPermaLink="true">http://www.chenchi.cc//jekyll/update/2013/03/19/vim-zerowidth.html</guid>
         
         
         <category>jekyll</category>

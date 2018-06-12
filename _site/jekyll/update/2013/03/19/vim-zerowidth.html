@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Welcome to 晨池's Page!</title>
-  <meta name="description" content="You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different wa...">
+  <title>VIM正则表达式之零宽断言</title>
+  <meta name="description" content="零宽断言就是zero-width，我觉得很难懂，但是搞清楚了其实很简单：">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.chenchi.cc//jekyll/update/2018/06/11/welcome-to-jekyll.html">
+  <link rel="canonical" href="http://www.chenchi.cc//jekyll/update/2013/03/19/vim-zerowidth.html">
   <link rel="alternate" type="application/rss+xml" title="陈池的博客" href="http://www.chenchi.cc//feed.xml">
 </head>
 
@@ -57,24 +57,38 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Welcome to 晨池's Page!</h1>
-    <p class="post-meta"><time datetime="2018-06-11T20:07:14+08:00" itemprop="datePublished">Jun 11, 2018</time></p>
+    <h1 class="post-title" itemprop="name headline">VIM正则表达式之零宽断言</h1>
+    <p class="post-meta"><time datetime="2013-03-19T02:30:14+08:00" itemprop="datePublished">Mar 19, 2013</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>You’ll find this post in your <code class="highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+    <p>零宽断言就是zero-width，我觉得很难懂，但是搞清楚了其实很简单：</p>
 
-<p>To add new posts, simply add a file in the <code class="highlighter-rouge">_posts</code> directory that follows the convention <code class="highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+<p>:echo matchstr(“abc1234def”, “\\v(abc)@&lt;=(.{-})(def)@=”)</p>
 
-<p>Jekyll also offers powerful support for code snippets:</p>
+<p>　　比如上述例子是一个典型的零宽断言应用，要求是abc的后面，def的前面，需要结合两个零宽断言来写，正则表达式结构看起来复杂其实简单：</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+<p>“(abc)@&lt;=(.{-})(def)@=”</p>
 
-<p>Check out the <a href="http://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
+<p>　　可以分成三部分：</p>
+
+<p>(abc)</p>
+
+<p>　　这是匹配前面的正则表达式，放在@&lt;=前面，表示所要取得的字符串，是在能匹配这个正则表达式的部分的后面</p>
+
+<p>(def)</p>
+
+<p>　　这是匹配后面的正则表达式，放在@=的前面，表示所要取得的字符串，是在能匹配这个正则表达式的部分的前面</p>
+
+<p>(.{-})</p>
+
+<p>　　这就是我们要取得的字符串的正则表达式了，这里{-}是表示尽可能短的一个字符串，不是蛤总的一个眼镜框。</p>
+
+<p>　　额外说明一下，\\v是一个前缀，它表示这个字符串完全使用正则表达式，星号不是星号，是代表任意匹配，@&lt;=也不是三个普通字符，而是代表前置零宽断言，因为在字符串里面，所以使用两个斜杠，如果在vim查找当中使用，只要一个就可以了 :/\v(abc)@&lt;=(.{-})(def)@= ，会在1234那里匹配成功。</p>
+
+<p>　　也就是说，要写一个零宽断言，获取两个正则表达式之间的部分，可以分成 (表达式前)@&lt;=(表达式)(表达式后)@=，表示取得“表达式前”和“表达式后”之间，能够匹配”表达式“的字符串。按照这个路数往上套就可以了。零否断言也一样原理。</p>
+
+<p><a href="http://teacher.edu.cn/pc/article/201303/578901.html">教育网</a></p>
 
 
   </div>
