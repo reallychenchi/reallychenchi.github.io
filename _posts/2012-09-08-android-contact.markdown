@@ -32,6 +32,6 @@ The first change is by onResume; and the rest changes are triggered by filter, i
 
 By now, the way how Android Contacts searches contacts is cleared, to get more detailed information, you have to look into the codes.
 
-[教育网][教育网]
+[原文来自我的教育网博客][原文来自我的教育网博客]
 
-[教育网]:http://teacher.edu.cn/pc/article/201209/555758.html
+[原文来自我的教育网博客]:http://teacher.edu.cn/pc/article/201209/555758.html

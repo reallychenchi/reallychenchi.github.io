@@ -36,6 +36,6 @@ http://developer.android.com/tools/projects/projects-cmdline.html
 
 http://stackoverflow.com/questions/3217643/how-to-add-external-jar-libraries-to-an-android-project-from-the-command-line
 
-[教育网][教育网]
+[原文来自我的教育网博客][原文来自我的教育网博客]
 
-[教育网]:http://teacher.edu.cn/pc/article/201209/555761.html
+[原文来自我的教育网博客]:http://teacher.edu.cn/pc/article/201209/555761.html

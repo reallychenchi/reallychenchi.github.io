@@ -23,6 +23,6 @@ categories: jekyll update
 　　所以，八零后们，在九零后面前颤抖吧！
 
 
-[教育网][教育网]
+[原文来自我的教育网博客][原文来自我的教育网博客]
 
-[教育网]:http://teacher.edu.cn/pc/article/201209/555757.html
+[原文来自我的教育网博客]:http://teacher.edu.cn/pc/article/201209/555757.html

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "博客建设中，不过仍然欢迎访问！"
+title:  "博客建设中，仍然欢迎访问！"
 date:   2018-06-11 20:07:14 +0800
 categories: jekyll update
 ---

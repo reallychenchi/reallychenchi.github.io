@@ -79,6 +79,6 @@ f 3 - e 3
 
 　　其实不难，难的还在后面
 
-[教育网][教育网]
+[原文来自我的教育网博客][原文来自我的教育网博客]
 
-[教育网]:http://teacher.edu.cn/pc/article/201209/557285.html
+[原文来自我的教育网博客]:http://teacher.edu.cn/pc/article/201209/557285.html
