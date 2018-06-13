@@ -2,6 +2,7 @@
 layout: page
 permalink: /categories/
 title: 分类/Categories
+order: 1
 ---
 <div id="archives">
 {% for category in site.categories %}

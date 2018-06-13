@@ -2,6 +2,7 @@
 layout: page
 title: 关于/About
 permalink: /about/
+order: 2
 ---
 
 陈池@鹤壁，本站基于github pages，使用jeklly搭建。 
