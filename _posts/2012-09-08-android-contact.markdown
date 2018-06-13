@@ -10,6 +10,7 @@ Based on the code of Android 2.3.7
 
 1. When user press the search key in the Contacts, an search box will pop up for user, and "ldh" will get "Liu Dehua" or 刘德华. contacts_search_content.xml is the layout for searching contacts, it only used in ContactsListActivity.java.
 
+ <!-- more -->
 2. Function ContactsListActivity.setupSearchView will set the change listener which will carry out searching task when user changed the characters
 
 3. Find function ContactsListActivity.onSearchTextChanged

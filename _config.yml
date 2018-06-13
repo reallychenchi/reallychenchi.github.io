@@ -11,3 +11,4 @@ github_username: reallychenchi
 paginate: 10
 gems: [jekyll-paginate]
 paginate_path: "page:num"
+excerpt_separator: "<!-- more -->"

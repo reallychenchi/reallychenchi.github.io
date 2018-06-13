@@ -16,6 +16,10 @@ layout: default
     <h2>
       <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
     </h2>
+   {{ post.excerpt }}   
+   <p><h3>
+	   <a href="{{ post.url | prepend: site.baseurl}}">ReadMore &raquo;</a>
+   </h3></p>
   </li>
 {% endfor %}
 

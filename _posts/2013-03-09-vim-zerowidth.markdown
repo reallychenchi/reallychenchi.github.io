@@ -10,6 +10,7 @@ categories: jekyll update
 :echo matchstr("abc1234def", "\\\\v(abc)@<=(.{-})(def)@=") 
 
 　　比如上述例子是一个典型的零宽断言应用，要求是abc的后面，def的前面，需要结合两个零宽断言来写，正则表达式结构看起来复杂其实简单：
+ <!-- more -->
 
 "(abc)@<=(.{-})(def)@="
 
