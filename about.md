@@ -4,9 +4,9 @@ title: 关于/About
 permalink: /about/
 ---
 
-陈池@鹤壁 
+陈池@鹤壁，本站基于github pages，使用jeklly搭建。 
 
-邮箱 E-Mail: mailto:me@chenchi.cc
+邮箱 E-Mail: me@chenchi.cc
 
 我在
 
