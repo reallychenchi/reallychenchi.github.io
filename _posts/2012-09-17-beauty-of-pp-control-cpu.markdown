@@ -26,13 +26,13 @@ class EatCpuQuater(threading.Thread):
 			start = time.time() * 100
 			ti = int(start)
 			tim = ti % 100
-			if tim >= (100 - self.NUM):):#判断是否需要挂起线程
+			if tim >= (100 - self.NUM):#判断是否需要挂起线程
 				time.sleep(0.03)#挂起线程0.03秒
 			else:
 				self.percent = self.percent * 31#执行一次运算
 
 
-	def setPercent(self, p):):#设置CPU利用率
+	def setPercent(self, p):#设置CPU利用率
 		self.percent = p
 		self.NUM = 100 - self.percent;
 
@@ -43,16 +43,17 @@ def f(i):#在这里指定函数
 e = EatCpuQuater()
 e.start()
 for i in range(0, 8000):
-	e.setPercent(f(i))))#设置 CPU利用率
-	time.sleep(0.2)#每0.2秒重置一下CPU利用率
+	e.setPercent(f(i))#设置 CPU利用率
+	time.sleep(0.5)#每0.5秒重置一下CPU利用率
 
 e.setPercent(-1)#退出程序
 {% endhighlight %}
 
-　　画出来的效果如下：
+　　在使用低刷新率情况下效果不错，画出来的效果如下：
+
+![PNG](/assets/img/2012-09-17-beauty-of-pp-control-cpu-p1.png)
 
 
-　　
 　　有些毛刺，但是大体还说得过去。用Python恐怕很难消除这些毛刺了。
 
 　　原文的题目，进一步，提出对于多核怎么处理？这个说简单也简单，有几个核，就开几个线程好了，所有的线程做一样的事情（不需要完全一样），就可以了。

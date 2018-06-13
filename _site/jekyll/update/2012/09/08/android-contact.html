@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>陈池的博客</title>
-  <meta name="description" content="陈池的博客">
+  <title>Android自带Contacts代码分析 1</title>
+  <meta name="description" content="Target: Find out the codes for search contacts and move it to the keyboard.">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.chenchi.cc//">
+  <link rel="canonical" href="http://www.chenchi.cc//jekyll/update/2012/09/08/android-contact.html">
   <link rel="alternate" type="application/rss+xml" title="陈池的博客" href="http://www.chenchi.cc//feed.xml">
 </head>
 
@@ -54,89 +54,68 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Android自带Contacts代码分析 1</h1>
+    <p class="post-meta"><time datetime="2012-09-08T11:18:14+08:00" itemprop="datePublished">Sep 8, 2012</time></p>
+  </header>
 
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Jun 11, 2018</span>
+  <div class="post-content" itemprop="articleBody">
+    <p>Target: Find out the codes for search contacts and move it to the keyboard.</p>
 
-        <h2>
-          <a class="post-link" href="/jekyll/update/2018/06/11/welcome-to-jekyll.html">博客建设中，不过仍然欢迎访问！</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Mar 19, 2013</span>
+<p>Based on the code of Android 2.3.7</p>
 
-        <h2>
-          <a class="post-link" href="/jekyll/update/2013/03/19/vim-zerowidth.html">VIM正则表达式之零宽断言</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 18, 2012</span>
+<ol>
+  <li>
+    <p>When user press the search key in the Contacts, an search box will pop up for user, and “ldh” will get “Liu Dehua” or 刘德华. contacts_search_content.xml is the layout for searching contacts, it only used in ContactsListActivity.java.</p>
+  </li>
+  <li>
+    <p>Function ContactsListActivity.setupSearchView will set the change listener which will carry out searching task when user changed the characters</p>
+  </li>
+  <li>
+    <p>Find function ContactsListActivity.onSearchTextChanged</p>
+  </li>
+</ol>
 
-        <h2>
-          <a class="post-link" href="/jekyll/update/2012/09/18/beauty-of-pp-pos-of-cheese.html">智力游戏-将帅问题</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 17, 2012</span>
+<p>Comes to this function, nearly everything is in your hand.</p>
 
-        <h2>
-          <a class="post-link" href="/jekyll/update/2012/09/17/beauty-of-pp-control-cpu.html">智力游戏-控制CPU利用率</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 8, 2012</span>
+<p>Continue:</p>
 
-        <h2>
-          <a class="post-link" href="/jekyll/update/2012/09/08/build-android-by-cmd.html">用命令行编译Android工程</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 8, 2012</span>
+<p>Now we know that the filter (such as “ldh”) is set to mAdapter, then adapter will filter the correct result automatically. In fact the mAdapter is a CursorAdapter, it holds a cursor and the filter is set to the cursor. When the result get, function ContactItemListAdapter.changeCursor will be called.</p>
 
-        <h2>
-          <a class="post-link" href="/jekyll/update/2012/09/08/android-contact.html">Android自带Contacts代码分析 1</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 8, 2012</span>
+<p>Print the function call stack with changeCursor as below:</p>
 
-        <h2>
-          <a class="post-link" href="/jekyll/update/2012/09/08/story-of-mao-2.html">八卦：毛传读后感　二</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 8, 2012</span>
+<p>D/DBG ( 1899): com.android.contacts.ContactsListActivity.startQuery(ContactsListActivity.java:3346)</p>
 
-        <h2>
-          <a class="post-link" href="/jekyll/update/2012/09/08/hezhizhang.html">贺知章《咏柳》赏析</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 8, 2012</span>
+<p>D/DBG ( 1899): com.android.contacts.ContactsListActivity.onResume(ContactsListActivity.java:1194)</p>
 
-        <h2>
-          <a class="post-link" href="/jekyll/update/2012/09/08/story-of-mao-3.html">八卦：毛传读后感　三</a>
-        </h2>
-      </li>
-    
-  </ul>
+<p>D/DBG ( 1899): android.app.Instrumentation.callActivityOnResume(Instrumentation.java:1150)</p>
 
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+<p>The first change is by onResume; and the rest changes are triggered by filter, in function onSearchTextChanged. Refer to codes .CursorFilter.publishResults for detail.</p>
 
-</div>
+<p>By now, the way how Android Contacts searches contacts is cleared, to get more detailed information, you have to look into the codes.</p>
+
+<p><a href="http://teacher.edu.cn/pc/article/201209/555758.html">教育网</a></p>
+
+
+  </div>
+  <div id="disqus_thread"></div>
+  <script>
+
+     var disqus_config = function () {
+     this.page.url = page.date;  // Replace PAGE_URL with your page's canonical URL variable
+     this.page.identifier = page.date; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+     };
+  (function() { // DON'T EDIT BELOW THIS LINE
+	  var d = document, s = d.createElement('script');
+	  s.src = 'https://chenchi.disqus.com/embed.js';
+	  s.setAttribute('data-timestamp', +new Date());
+	  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</article>
 
       </div>
     </div>

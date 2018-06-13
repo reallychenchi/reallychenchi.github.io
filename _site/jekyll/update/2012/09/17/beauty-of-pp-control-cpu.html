@@ -83,13 +83,13 @@
 			<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span>
 			<span class="n">ti</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
 			<span class="n">tim</span> <span class="o">=</span> <span class="n">ti</span> <span class="o">%</span> <span class="mi">100</span>
-			<span class="k">if</span> <span class="n">tim</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="mi">100</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">NUM</span><span class="p">):):</span><span class="c">#判断是否需要挂起线程</span>
+			<span class="k">if</span> <span class="n">tim</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="mi">100</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">NUM</span><span class="p">):</span><span class="c">#判断是否需要挂起线程</span>
 				<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.03</span><span class="p">)</span><span class="c">#挂起线程0.03秒</span>
 			<span class="k">else</span><span class="p">:</span>
 				<span class="bp">self</span><span class="o">.</span><span class="n">percent</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">percent</span> <span class="o">*</span> <span class="mi">31</span><span class="c">#执行一次运算</span>
 
 
-	<span class="k">def</span> <span class="nf">setPercent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">):):</span><span class="c">#设置CPU利用率</span>
+	<span class="k">def</span> <span class="nf">setPercent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span><span class="c">#设置CPU利用率</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">percent</span> <span class="o">=</span> <span class="n">p</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">NUM</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">percent</span><span class="p">;</span>
 
@@ -100,15 +100,16 @@
 <span class="n">e</span> <span class="o">=</span> <span class="n">EatCpuQuater</span><span class="p">()</span>
 <span class="n">e</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8000</span><span class="p">):</span>
-	<span class="n">e</span><span class="o">.</span><span class="n">setPercent</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">))))</span><span class="c">#设置 CPU利用率</span>
-	<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span><span class="c">#每0.2秒重置一下CPU利用率</span>
+	<span class="n">e</span><span class="o">.</span><span class="n">setPercent</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">))</span><span class="c">#设置 CPU利用率</span>
+	<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span><span class="c">#每0.5秒重置一下CPU利用率</span>
 
 <span class="n">e</span><span class="o">.</span><span class="n">setPercent</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="c">#退出程序</span></code></pre></figure>
 
-<p>　　画出来的效果如下：</p>
+<p>　　在使用低刷新率情况下效果不错，画出来的效果如下：</p>
 
-<p>　　
-　　有些毛刺，但是大体还说得过去。用Python恐怕很难消除这些毛刺了。</p>
+<p><img src="/assets/img/2012-09-17-beauty-of-pp-control-cpu-p1.png" alt="PNG" /></p>
+
+<p>　　有些毛刺，但是大体还说得过去。用Python恐怕很难消除这些毛刺了。</p>
 
 <p>　　原文的题目，进一步，提出对于多核怎么处理？这个说简单也简单，有几个核，就开几个线程好了，所有的线程做一样的事情（不需要完全一样），就可以了。</p>
 
