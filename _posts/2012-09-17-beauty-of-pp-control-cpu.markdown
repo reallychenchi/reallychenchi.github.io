@@ -2,7 +2,7 @@
 layout: post
 title:  "智力游戏-控制CPU利用率"
 date:   2012-09-17 05:05:14 +0800
-categories: jekyll update
+categories: 编程
 ---
 　　《编程之美》是一本很好的书，里面的题目很有意思。第一道题目就是控制CPU利用率并且显示一个正弦函数。今天做了一下这个题目，放上来给大家共享。
 

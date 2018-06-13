@@ -2,7 +2,7 @@
 layout: post
 title:  "八卦：毛传读后感　二"
 date:   2012-09-08 11:09:14 +0800
-categories: jekyll update
+categories: 读书笔记
 ---
 八零后们，在九零后面前颤抖吧！
 

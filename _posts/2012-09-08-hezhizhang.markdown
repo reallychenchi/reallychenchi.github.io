@@ -2,7 +2,7 @@
 layout: post
 title:  "贺知章《咏柳》赏析"
 date:   2012-09-08 11:14:15 +0800
-categories: jekyll update
+categories: 扯闲篇
 ---
 碧玉妆成一树高，万条垂下绿丝绦，不知细叶谁裁出，二月春风似剪刀。
 

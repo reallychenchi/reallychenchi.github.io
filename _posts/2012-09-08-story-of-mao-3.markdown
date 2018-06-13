@@ -2,7 +2,7 @@
 layout: post
 title:  "八卦：毛传读后感　三"
 date:   2012-09-08 11:15:14 +0800
-categories: jekyll update
+categories: 读书笔记
 ---
 　　今天终于都看完了，中间有些可以八卦的地方由于当时所处位置不方便发帖就没有发，以后慢慢来。
 

@@ -2,7 +2,7 @@
 layout: post
 title:  "用命令行编译Android工程"
 date:   2012-09-08 11:20:14 +0800
-categories: jekyll update
+categories: 编程
 ---
 　　今天终于做了我梦寐以求的一件事情就是用命令行编译成功了安卓工程。
 

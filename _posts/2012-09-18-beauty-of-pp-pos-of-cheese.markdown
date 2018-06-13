@@ -2,7 +2,7 @@
 layout: post
 title:  "智力游戏-将帅问题"
 date:   2012-09-18 09:42:14 +0800
-categories: jekyll update
+categories: 编程
 ---
 　　编程之美的第二题，是要求“只用一个变量”打印出将帅所有合法的位置。这个题目不加限制的话一点也不难，加了限制就要动动脑子了。
  <!-- more -->
