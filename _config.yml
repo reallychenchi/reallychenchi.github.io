@@ -8,5 +8,6 @@ avatar: assets/img/qht.jpg
 description: 陈池的博客                # Short description, primarily used by search engines
 email: me@chenchi.cc
 github_username: reallychenchi
-paginate: 5
+paginate: 10
 gems: [jekyll-paginate]
+paginate_path: "page:num"
