@@ -3,6 +3,7 @@ layout: post
 title:  "Android自带Contacts代码分析 1"
 date:   2012-09-08 11:18:14 +0800
 categories: 编程
+tags: android 联系人
 ---
 Target: Find out the codes for search contacts and move it to the keyboard.
 

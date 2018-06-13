@@ -3,6 +3,7 @@ layout: post
 title:  "VIM正则表达式之零宽断言"
 date:   2013-03-19 02:30:14 +0800
 categories: 编程
+tags: 正则表达式 零宽断言
 ---
 
 零宽断言就是zero-width，我觉得很难懂，但是搞清楚了其实很简单：

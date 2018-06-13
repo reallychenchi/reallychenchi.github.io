@@ -1,5 +1,7 @@
 <footer class="site-footer">
-
+{% if site.tags != "" %}
+  {% include collecttags.html %}
+{% endif %}
   <div class="wrapper">
 
     <h2 class="footer-heading">{{ site.title }}</h2>
