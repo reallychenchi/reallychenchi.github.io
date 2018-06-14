@@ -10,7 +10,7 @@ layout: default
 
 {% for post in paginator.posts %}
   <li>
-    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}
+    <span class="post-meta">{{ post.date | date: "%Y-%m-%d" }}
        {{ post.categories | array_to_sentence_string  }}
 
     <h2>
