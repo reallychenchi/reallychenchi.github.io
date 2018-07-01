@@ -33,14 +33,14 @@ layout: default
 
     {% for page in (1..paginator.total_pages) %}
       {% if page == paginator.page %}
-	<em> [第 {{ page }} 页] <em>
+	<em> [ {{ page }} ] <em>
       {% elsif page == 1 %}
         <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">
-		[第{{ page }}页]
+		[ {{ page }} ]
         </a>
       {% else %}
         <a href="{{ site.paginate_path | prepend: '/' | replace: '//', '/' | replace: ':num', page }}">
-		[第{{ page }}页]
+		[ {{ page }} ]
         </a>
       {% endif %}
     {% endfor %}
