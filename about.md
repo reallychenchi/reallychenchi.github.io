@@ -35,7 +35,6 @@ order: 2
 
 [修改页面顺序][修改页面顺序]
 
-[教育网爬文章工具][edubloger]
 
 [Github]:https://github.com/reallychenchi
 [知乎]:https://www.zhihu.com/people/chen-chi-97-14/
@@ -46,4 +45,3 @@ order: 2
 [设置文章tag]: http://longqian.me/2017/02/09/github-jekyll-tag/
 [修改页面顺序]: https://stackoverflow.com/questions/13266369/how-to-change-the-default-order-pages-in-jekyll
 [修改日期显示]: http://alanwsmith.com/jekyll-liquid-date-formatting-examples
-[edubloger]: /assets/edublogMover.py 
