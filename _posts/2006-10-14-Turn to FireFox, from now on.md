@@ -3,7 +3,7 @@ layout: post
 title: Turn to FireFox, from now on!
 date: 2006-10-14 10:14
 categories: 扯闲篇
-tag: 
+tags: 
 ---
 
 Yesterday, my computer was control by someone else remotely. I download the Kaspersky 6.0 and update it as a trial edition, scanned all my disks, but my computer still can not recover from the disaster. At last, I h***e to format the C disk and reinstall all the software.

@@ -12,3 +12,4 @@ paginate: 6
 gems: [jekyll-paginate]
 paginate_path: "page:num"
 excerpt_separator: "<!-- more -->"
+exclude: ['CHANGELOG.md', '*.xxx']

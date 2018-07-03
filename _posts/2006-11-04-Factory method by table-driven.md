@@ -3,7 +3,7 @@ layout: post
 title: Factory method by table-driven
 date: 2006-11-04 12:21
 categories: 编程 
-tag: C++ 
+tags: C++ 
 ---
  
 Maybe, discoverying or inventing factory mehtod by table-driven indenpended is the great summary of the first year of my programming way. I will write down how I think about this idea and I will give out a implemention of factory method by table-driven, in C++.

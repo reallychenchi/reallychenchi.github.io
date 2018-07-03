@@ -1,0 +1,62 @@
+---
+layout: post
+title: configure的交叉编译问题 (Linux x86 - Linux arm11)
+date: 2011-09-16 20:00
+categories: 编程
+tags: 
+---
+
+　　这个是前一篇CMake交叉编译的后继。针对的也是像我一样，对Linux下configure编译工具毫不了解但是要用它们做交叉编译的程序猿们。
+
+<!-- more -->
+
+
+
+　　首先，所谓的configure虽然用的多，但是它也只是一个自动生成的东西，如果你打开这个东西一看，那真和天书差不多。我们下载下来的Linux开源工程，往往编译步骤是先执行命令./configure，检查是否符合编译条件，然后生成一个Makefile，才是make & make install。这个configure是一个自动生成的脚本文件，所用的工具是autoconf和automake，这两个工具，根据configure.in和makefile.am文件（可能还需要makefile.in吧，我不太清楚），生成configure。如果你拿到的开源代码有configure，那么肯定也有configure.in和makefile.am，这两个，才是人写给人看的，configure是机器写给机器看的。
+
+　　所以，如果我们想对一个由configure编译的工程进行交叉编译，一个思路就是修改configure.in和makefile.am（可以还需要修改makefile.in），不过显然我不是这样做的，太花时间了，还要额外去学autoconf和automake。一个比较简单的办法是通过设置configure的参数，因为configure也是一个工具，具有很好的可定制性。
+
+　　交叉编译，一般来说就是两个地方处理好就可以了：编译器和依赖库。
+
+　　对于configure来说，编译器可以通过环境变量CC来设置，因为configure生成编译器指向的时候，就是从环境变量里面找的，CC是C语言编译器，C++啊什么的，和普通Makefile的也是完全一样的。
+
+　　设置依赖库也是和makefile一样的，通过环境变量LDFLAGS。设置对应的头文件则是通过环境变量CFLAGS。
+
+　　那么，一个办法是直接修改这三个环境变量（暴力了一点），在一个办法就是在命令行里临时指定这三个环境变量，我用的是后面的办法，写了一个脚本文件如下：
+
+
+
+CC=/usr/local/arm11-toolchain/g4.4.2/cross-tools/bin/g-4.4.2 \
+
+LDFLAGS="-L/home/third_party/source/lib -L/home/third_party/library/g-4.4.2/zlib/lib" \
+
+./configure  --build=i686-pc-linux --host=arm-linux --target=i686-linux \
+
+ --enable-shared --prefix=$PREFIX \
+
+ --with-freetype-config=$PREFIX/bin/freetype-config \
+
+ --enable-libxml2 --with-arch=arm \
+
+ CFLAGS=-I/home/third_party/library/g-4.4.2/freetype/include-I/home/third_party/library/g-4.4.2/freetype/include/freetype2 \
+
+　　第一行指定了交叉编译所用的编译器
+
+　　第二行指定了依赖库所在的目录
+
+　　最后一行是头文件所在目录，这个放在前面应该也可以……不过我没试过。
+
+　　但是需要注意的是粗体的那几行，--build指明的是在什么环境下编译，--host是要编译到哪个环境，--target是在什么环境下运行。如果你要做交叉编译，这三个选项是一定要写上的，否则configure不知道自己是在进行交叉编译。
+
+　　剩下的两个选项，就是原来的编译手册要求的，我照猫画虎放上去而已啦。每一行结束处的斜杠表示下一行要接上来（好长一行吧，所以才写成脚本）。
+
+　　你在做configure工程的交叉编译的时候，可以先试试看按照上面的办法，指定编译器、依赖库和头文件目录，另外就是加上build、host、target这三个参数，对于大部分程序，应该就可以了。
+
+这里是一个比较详细的 configure参数：http://www.linuxsky.org/doc/newbie/200801/242.html
+
+如果你对自己写configure有兴趣，可以参考这里：http://www.ibm.com/developerworks/cn/linux/l-makefile/
+
+
+
+[原文在百度空间已经关闭]
+

@@ -3,7 +3,7 @@ layout: post
 title: 关于IFC文件读取类的设计的想法（LocalPlacement）
 date: 2006-01-11 03:09
 categories: 编程
-tag: IFC
+tags: IFC
 ---
 
 　　IFC文件是用树形结构组织的，LocalPalcement也是通过树形结构来实现一层一层的递归嵌套的相对坐标系统。那么，假设我们需要把这个相对坐标系统中的点转换成为一个只有一个绝对坐标系统的点，类的设计应该考虑增加一个堆栈，保存所有的LocalPlacement。在转换的时候，可以逐个调用。

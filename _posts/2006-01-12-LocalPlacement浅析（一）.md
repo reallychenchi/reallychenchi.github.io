@@ -3,7 +3,7 @@ layout: post
 title: LocalPlacement浅析（一）
 date: 2006-01-12 04:20
 categories: 编程
-tag: IFC
+tags: IFC
 ---
   IFCLOCALPLACEMENT在IFC中用于标记坐标系统，它由两部分组成：它所相对的坐标系统和它的原点、三个坐标轴方向。形式如下：
 <!-- more -->
