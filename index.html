@@ -25,13 +25,35 @@ layout: default
 
 {% if paginator.total_pages > 1 %}
   <div class="pagination">
+    {% if paginator.page == 1%}
+      <span>[首页]</span>
+    {% else %}
+      <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">[首页]</a>
+    {% endif %}
     {% if paginator.previous_page %}
       <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; [上一页]</a>
     {% else %}
       <span>&laquo; [上一页]</span>
     {% endif %}
 
-    {% for page in (1..paginator.total_pages) %}
+    {% assign startPage = paginator.page|minus:3 %}
+    {% assign endPage = paginator.page|plus:3 %}
+    {% assign startDelta = -1 %}
+    {% assign endDelta = -1 %}
+
+    {% if startPage < 1 %}
+	 {% assign startDelta = 1|minus:startPage %}
+	 {% assign endPage = endPage|plus:startDelta %}
+	 {% assign startPage = 1 %}
+    {% endif %}
+
+    {% if endPage > paginator.total_pages %}
+	 {% assign endDelta = endPage|minus:paginator.total_pages %}
+	 {% assign endPage = paginator.total_pages %}
+	 {% assign startPage = startPage|minus:endDelta %}
+    {% endif %}
+
+    {% for page in (startPage..endPage) %}
       {% if page == paginator.page %}
 	<em> [ {{ page }} ] <em>
       {% elsif page == 1 %}
@@ -49,6 +71,13 @@ layout: default
       <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">[下一页] &raquo;</a>
     {% else %}
       <span>[下一页] &raquo;</span>
+    {% endif %}
+    {% if paginator.page == paginator.total_pages %}
+      <span>[末页]</span>
+    {% else %}
+        <a href="{{ site.paginate_path | prepend: '/' | replace: '//', '/' | replace: ':num', paginator.total_pages}}">
+		[末页]
+        </a>
     {% endif %}
   </div>
 {% endif %}
