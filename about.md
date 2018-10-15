@@ -11,6 +11,10 @@ order: 2
 
 邮箱 E-Mail: me@chenchi.cc
 
+### 求职中
+
+[详细简历] [详细简历]
+
 ### 我在
 
 [Github][Github]
@@ -43,3 +47,4 @@ order: 2
 [设置文章tag]: http://longqian.me/2017/02/09/github-jekyll-tag/
 [修改页面顺序]: https://stackoverflow.com/questions/13266369/how-to-change-the-default-order-pages-in-jekyll
 [修改日期显示]: http://alanwsmith.com/jekyll-liquid-date-formatting-examples
+[详细简历]: ../resume/
