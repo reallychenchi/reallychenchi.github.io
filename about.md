@@ -11,10 +11,6 @@ order: 2
 
 邮箱 E-Mail: me@chenchi.cc
 
-### 求职中
-
-[详细简历] [详细简历]
-
 ### 我在
 
 [Github][Github]
