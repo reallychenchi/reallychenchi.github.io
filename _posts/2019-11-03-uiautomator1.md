@@ -3,7 +3,7 @@ layout: post
 title:  "UiAutomator试用"
 date:   2019-11-03 19:54:00 +0800
 categories: 编程
-tags: TDD
+tags: TDD UiAutomator
 ---
 
 测试驱动开发是个好东西，但是它需要以自动测试为前提，自动测试对于移动应用开发似乎太难了。不过UiAutomator其实是可以解决这个问题的，不过有些坑实在太难为人，其他一些问题，我以为还是有办法解决的，只要成本划算是可以做的。
