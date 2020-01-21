@@ -49,4 +49,21 @@ comments: true
   })();
   </script>
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: 'reallychenchi',
+  repo: 'ChenchiComment',
+  oauth: {
+    client_id: 'c7d7d87136e702063e47',
+    client_secret: '4bd5de77e05e5a4fe564f578732115f641a7667d',
+  },
+})
+gitment.render('container')
+</script>
+
+
 </article>
