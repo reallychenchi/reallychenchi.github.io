@@ -34,36 +34,21 @@ comments: true
     {{ content }}
   </div>
 {% include archive.html %}
-  <div id="disqus_thread"></div>
-  <script>
-
-     var disqus_config = function () {
-     this.page.url = page.date;  // Replace PAGE_URL with your page's canonical URL variable
-     this.page.identifier = page.date; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-     };
-  (function() { // DON'T EDIT BELOW THIS LINE
-	  var d = document, s = d.createElement('script');
-	  s.src = 'https://chenchi.disqus.com/embed.js';
-	  s.setAttribute('data-timestamp', +new Date());
-	  (d.head || d.body).appendChild(s);
-  })();
-  </script>
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
-<div id="container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<div id="gitalk-container"></div>
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
 <script>
-var gitment = new Gitment({
-  owner: 'reallychenchi',
+var gitalk = new Gitalk({
+  clientID: 'c7d7d87136e702063e47',
+  clientSecret: '4bd5de77e05e5a4fe564f578732115f641a7667d',
   repo: 'ChenchiComment',
-  oauth: {
-    client_id: 'c7d7d87136e702063e47',
-    client_secret: '4bd5de77e05e5a4fe564f578732115f641a7667d',
-  },
+  owner: 'reallychenchi',
+  admin: reallychenchi,
+  id: location.reallychenchi,      // Ensure uniqueness and length less than 50
+  distractionFreeMode: false  // Facebook-like distraction free mode
 })
-gitment.render('container')
+gitalk.render('gitalk-container')
 </script>
-
 
 </article>
