@@ -7,6 +7,76 @@ comments: true
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
     <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%Y-%m-%d" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+<style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        margin: 0 auto;
+        padding-bottom: 60px;
+        max-width: 720px;
+        color: #6190E8;
+        font-family: "PingFang SC", Helvetica, "Microsoft YaHei", Arial, sans-serif;
+      }
+      .hero {
+        margin: 80px 0;
+        text-align: center;
+      }
+      .logo {
+        display: inline-block;
+        text-decoration: none;
+        height: 50px;
+        line-height: 50px;
+        vertical-align: middle;
+      }
+      .hero h1 {
+        margin-left: 16px;
+        display: inline-block;
+        font-size: 32px;
+        font-weight: 500;
+        vertical-align: bottom;
+      }
+      .hero-intro {
+        margin: 28px 0;
+        font-size: 20px;
+        font-weight: 300;
+      }
+      .hero-buttons a {
+        display: inline-block;
+        text-decoration: none;
+        height: 36px;
+        line-height: 36px;
+        border-radius: 36px;
+      }
+      .btn-begin {
+        padding: 0 20px;
+        min-width: 80px;
+        color: white;
+        background-color: #6190E8;
+      }
+      .btn-github {
+        margin-left: 36px;
+        width: 120px;
+        color: #6190E8;
+        border: 1px solid #6190E8;
+      }
+      .demo-title {
+        text-align: center;
+      }
+      .demo-title span {
+        display: inline-block;
+        padding-bottom: 10px;
+        font-size: 20px;
+        border-bottom: 1px dashed #6190E8;
+        width: 120px;
+      }
+      @media (max-width: 720px) {
+        .container {
+          width: 90%;
+        }
+      }
+</style>
   </header>
   <div class="post-categories">[分类：
   {% if post %}
@@ -34,19 +104,18 @@ comments: true
     {{ content }}
   </div>
 {% include archive.html %}
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 <div id="gitalk-container"></div>
 
 <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        clientID: 'e46f6dec7c07145c652c',
-        clientSecret: 'd1a0b627f9b76d21bd3080d1777d0aa0ad55dd83',
-        repo: 'gitalk',
-        owner: 'gitalk',
-        admin: ['booxood', 'mamboer'],
-        id: 'Demo',
+        clientID: 'c7d7d87136e702063e47',
+        clientSecret: '4bd5de77e05e5a4fe564f578732115f641a7667d',
+        repo: 'ChenchiComment',
+        owner: 'reallychenchi',
+        admin: ['reallychenchi'],
+        id: 'chenchi.cc',
         distractionFreeMode: true
       });
       gitalk.render('gitalk-container');
