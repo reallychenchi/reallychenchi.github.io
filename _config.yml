@@ -9,7 +9,9 @@ description: 陈池的博客                # Short description, primarily used 
 email: me@chenchi.cc
 github_username: reallychenchi
 paginate: 6
-gems: [jekyll-paginate]
+gems: [jekyll-paginate, jekyll-sitemap]
 paginate_path: "page:num"
 excerpt_separator: "<!-- more -->"
 exclude: ['CHANGELOG.md', '*.xxx']
+plugin:
+  - jekyll-sitemap
