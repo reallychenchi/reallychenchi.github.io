@@ -7,7 +7,7 @@ order: 2
 
 ### 关于
 
-陈池@鹤壁，本站基于github pages，使用jeklly搭建。 
+陈池@鹤壁，本站基于github pages，使用jeklly搭建，评论功能使用gitalk。 
 
 邮箱 E-Mail: me@chenchi.cc
 
@@ -33,6 +33,7 @@ order: 2
 
 [修改页面顺序][修改页面顺序]
 
+[Gitalk评论系统][Gitalk评论系统]
 
 [Github]:https://github.com/reallychenchi
 [知乎]:https://www.zhihu.com/people/chen-chi-97-14/
@@ -43,4 +44,5 @@ order: 2
 [设置文章tag]: http://longqian.me/2017/02/09/github-jekyll-tag/
 [修改页面顺序]: https://stackoverflow.com/questions/13266369/how-to-change-the-default-order-pages-in-jekyll
 [修改日期显示]: http://alanwsmith.com/jekyll-liquid-date-formatting-examples
+[Gitalk评论系统]: https://github.com/gitalk/gitalk
 [详细简历]: ../resume/
