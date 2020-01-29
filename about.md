@@ -19,9 +19,9 @@ order: 2
 
 [微博][微博]
 
-[教育网][教育网] 这里经过一次升级，原文多有缺失，已经修订转移到这里。
+教育网（已关闭） 升级不能访问了，择要转移到这里。
 
-百度空间（已关闭） 百度升级不能访问了，择要转移到这里。
+百度空间（已关闭） 升级不能访问了，择要转移到这里。
 
 ### 建站参考：
 
@@ -38,7 +38,6 @@ order: 2
 [知乎]:https://www.zhihu.com/people/chen-chi-97-14/
 [微博]:https://weibo.com/206731119
 [花草园]:http://www.huacaoyuan.net/
-[教育网]:http://teacher.edu.cn/pc/author/1558094.html
 [设置文章分类]: https://blog.webjeda.com/jekyll-categories/
 [设置文章tag]: http://longqian.me/2017/02/09/github-jekyll-tag/
 [修改页面顺序]: https://stackoverflow.com/questions/13266369/how-to-change-the-default-order-pages-in-jekyll
