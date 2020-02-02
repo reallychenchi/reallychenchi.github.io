@@ -25,6 +25,8 @@ tags: Flutter
 
 现在Android开发已经用Androidx取代了support包来处理以前版本的兼容问题，但是百川SDK还不支持，如果你的Flutter应用在配置了淘宝第三方登录以后编译失败，提示找不到support包，说明是Flutter里面引用的第三方库或者你自己引用了androidx，这个问题没有别的办法，只能取消对Androidx的引用来解决。如果是自己引用的，就想办法换掉；如果是第三方Flutter库引用的，要么使用这些库支持support包的版本，要么换其他库或者自己写。
 
+另外就是Flutter如果升级到当前版本1.12以上，很可能Flutter本身就已经引用了androidx，这时候只能用以前老版本的Flutter，我用的是1.7.8版本可以，没有测试具体哪个版本开始不能用的。
+
 或者不要做淘宝第三方登录。
 
 幻想让Androidx和Support包和平共存是不太可能的。
