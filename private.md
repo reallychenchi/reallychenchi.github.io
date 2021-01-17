@@ -1,5 +1,4 @@
 ---
-layout: page
 title: 私房相册隐私协议
 permalink: /ppprivate/
 order: 0
