@@ -7,7 +7,7 @@ order: 2
 
 ### 关于
 
-陈池@鹤壁，本站基于github pages，使用jeklly搭建，评论功能使用gitalk。 
+陈池@鹤壁，本站基于github pages，使用jekyll搭建，评论功能使用gitalk。 
 
 邮箱 E-Mail: me@chenchi.cc
 
